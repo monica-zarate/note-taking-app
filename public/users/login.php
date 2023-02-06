@@ -71,19 +71,19 @@ if (is_post_request()) {
       <div class="grid grid-cols-12 mt-10">
         <div class="col-start-3 col-end-11 col-span-8">
 
-          <form action="<?php echo get_public_url('/users/login.php'); ?>" method="POST" class="shadow border rounded w-full py-2 px-3 text-gray-700">
+          <form action="<?php echo get_public_url('/users/login.php'); ?>" method="POST" class="shadow border rounded-3xl w-full pt-28 pb-14 px-3 text-gray-700 grid justify-items-center content-center">
 
-            <div class="mb-4">
+            <div class="mb-4 w-3/4">
               <label class="block text-sm font-bold mb-2" for="email">Email</label>
               <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="email" type="email" name="email">
             </div>
 
-            <div class="mb-4">
+            <div class="mb-4 w-3/4">
               <label class="block text-sm font-bold mb-2" for="password">Password</label>
               <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="password" type="password" name="password">
             </div>
 
-            <button class="bg-emerald-500 rounded-full py-2 px-4 text-white font-bold" type="submit">Log In</button>
+            <button class="bg-emerald-500 rounded-2xl py-3 px-5 mt-24 text-white font-bold" type="submit">Log In</button>
 
           </form>
 

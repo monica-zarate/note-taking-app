@@ -59,6 +59,17 @@
  
         }
 
+        static public function find_user_by_id($id) {
+	 
+            $sql = "SELECT * FROM users ";
+            $sql .= "WHERE id='" . $id . "'";
+ 
+            $result = self::$db->query($sql);
+ 
+            return $result;
+ 
+        }
+
         // The  validate_password() method receives the password the user's entered and then calls the password_verify() built in function a
         public function validate_password($provided_password) {
             return password_verify($provided_password, $this->password);

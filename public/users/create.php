@@ -78,7 +78,7 @@ if (is_post_request()) {
 
             <div class="mb-4">
               <label class="block text-sm font-bold mb-2" for="user_dob">Date of Birth</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob" placeholder="YYY,MM,DD">
+              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob" placeholder="YYYY,MM,DD">
             </div>
 
             <div class="mb-4">
@@ -118,7 +118,7 @@ if (is_post_request()) {
               <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_interests" type="text" name="interests">
             </div>
 
-            <button class="bg-emerald-500 rounded-full py-2 px-4 text-white font-bold" type="submit">Sign Up</button>
+            <button class="bg-emerald-500 rounded-2xl py-3 px-5 text-white font-bold" type="submit">Sign Up</button>
 
             <div class="mb-4">
               <span>Already have an Account?</span>

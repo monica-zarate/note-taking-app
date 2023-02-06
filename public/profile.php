@@ -4,6 +4,12 @@
 
     $session->is_logged_in();
 
+    $userObj = User::find_user_by_id($session->user_id);
+
+    $user = $userObj->fetch_assoc();
+
+    // dd($user);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,52 +40,54 @@
                 </div>
             </div>
             <div class="grid grid-cols-12 pb-6">
-                <div class="col-start-3 col-end-11 col-span-8 flex items-center container mx-auto py-20">
-                    <h1 class="font-bold text-2xl flex-grow text-center text-emerald-500">Full name.</h1>
+                <div class="col-start-3 col-end-11 col-span-8 flex items-center container mx-auto py-11">
+                    <h1 class="font-bold text-2xl flex-grow text-center text-emerald-500">
+                        <?php echo h(ucfirst($user['first_name']) . " " . ucfirst($user['last_name'])); ?>
+                    </h1>
                 </div>
                 <!-- Profile Details Start -->
                 <div class="col-start-3 col-end-11 col-span-8">
 
-                    <form action="<?php echo get_public_url('/users/create.php'); ?>" method="POST" class="shadow border rounded w-full py-2 px-3 text-gray-700">
+                    <form action="<?php echo get_public_url('/users/create.php'); ?>" method="POST" class="shadow border rounded-3xl w-full py-28 text-gray-700 grid justify-items-center content-center">
 
-                        <div class="mb-4">
-                            <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_name" type="text" name="username" placeholder="Username goes here!">
+                        <div class="mb-12 w-1/2">
+                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_name" type="text" name="username" placeholder="Username goes here!" value="<?php echo h($user['username']); ?>">
                         </div>
 
-                        <div class="mb-4">
-                            <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob" placeholder="YYY,MM,DD">
+                        <div class="mb-12 w-1/2">
+                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_dob" type="text" name="dob" placeholder="YYYY,MM,DD" value="<?php echo h($user['dob']); ?>">
                         </div>
 
-                        <div class="mb-4">
-                            <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_email" type="email" name="email" placeholder="User's email goes here!">
+                        <div class="mb-12 w-1/2">
+                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_email" type="email" name="email" placeholder="User's email goes here!" value="<?php echo h($user['email']); ?>">
                         </div>
 
-                        <div class="mb-4">
-                            <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_password" type="password" name="password" placeholder="Password">
+                        <div class="mb-12 w-1/2">
+                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_password" type="password" name="password" placeholder="Password" value="******">
                         </div>
 
-                        <div class="mb-4">
-                            <select class="shadow border rounded w-full py-2 px-3 text-gray-700" name="country" id="user_country">
+                        <div class="mb-12 w-1/2">
+                            <select class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" name="country" id="user_country">
                                 <option value="">Please choose one</option>
-                                <option value="Mongolia">Mongolia</option>
-                                <option value="India">India</option>
-                                <option value="Canada">Canada</option>
-                                <option value="USA">USA</option>
-                                <option value="Mexico">Mexico</option>
+                                <option <?php echo h($user['country'] == 'Mongolia') ? 'selected' : ''; ?> value="Mongolia">Mongolia</option>
+                                <option <?php echo h($user['country'] == 'India') ? 'selected' : ''; ?> value="India">India</option>
+                                <option <?php echo h($user['country'] == 'Canada') ? 'selected' : ''; ?> value="Canada">Canada</option>
+                                <option <?php echo h($user['country'] == 'USA') ? 'selected' : ''; ?> value="USA">USA</option>
+                                <option <?php echo h($user['country'] == 'Mexico') ? 'selected' : ''; ?> value="Mexico">Mexico</option>
                             </select>
                         </div>
 
-                        <div class="mb-4">
-                            <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_phone" type="tel" name="phone" placeholder="Phone number goes here!">
+                        <div class="mb-12 w-1/2">
+                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_phone" type="tel" name="phone" placeholder="Phone number goes here!" value="<?php echo h($user['phone']); ?>">
+                        </div>
+
+                        <div class="mb-12 w-1/2">
+                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_interests" type="text" name="interests" placeholder="User's interests goes here!" value="<?php echo h($user['interests']); ?>">
                         </div>
 
                         <div class="mb-4">
-                            <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_interests" type="text" name="interests" placeholder="User's interests goes here!">
-                        </div>
-
-                        <div class="mb-4">
-                            <button class="bg-emerald-500 rounded-full py-2 px-4 text-white font-bold" type="submit">
-                                <a class="inline-block py-2 no-underline font-bold" href="<?php echo get_public_url('/users/logout.php'); ?>">Log Out</a>
+                            <button class="bg-emerald-500 rounded-2xl py-3 px-5 text-white font-bold" type="submit">
+                                <a class="inline-block no-underline font-bold" href="<?php echo get_public_url('/users/logout.php'); ?>">Log Out</a>
                             </button>
                         </div>
 
