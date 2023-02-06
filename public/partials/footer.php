@@ -1,6 +1,6 @@
 <div class="border-t text-center p-6">
-    <p class="text-slate-400 text-md font-light">&copy; 2022</p>
-    <p class="text-slate-400 text-md font-light">QA - Assignment 1</p>
+    <p class="text-slate-400 text-md font-light">&copy; 2023</p>
+    <p class="text-slate-400 text-md font-light">MDIA 4590: Assignment 1</p>
 </div>
 
 <!-- Scripts -->

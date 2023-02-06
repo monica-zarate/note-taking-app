@@ -31,7 +31,7 @@ if (is_post_request()) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MDIA 3294 - Note Application</title>
+  <title>MDIA 4590 - Notes Application</title>
 
   <!-- tailwindcss -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -78,7 +78,7 @@ if (is_post_request()) {
 
             <div class="mb-4">
               <label class="block text-sm font-bold mb-2" for="user_dob">Date of Birth</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob">
+              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob" placeholder="YYY,MM,DD">
             </div>
 
             <div class="mb-4">
@@ -100,11 +100,11 @@ if (is_post_request()) {
               <label class="block text-sm font-bold mb-2" for="user_country">Country</label>
               <select class="shadow border rounded w-full py-2 px-3 text-gray-700" name="country" id="user_country">
                 <option value="">Please choose one</option>
-                <option value="mongolia">Mongolia</option>
-                <option value="india">India</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-                <option value="mexico">Mexico</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="India">India</option>
+                <option value="Canada">Canada</option>
+                <option value="USA">USA</option>
+                <option value="Mexico">Mexico</option>
               </select>
             </div>
 
