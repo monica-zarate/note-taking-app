@@ -39,35 +39,35 @@
                     <span class="text-base text-emerald-500">User's avatar here!</span>
                 </div>
             </div>
-            <div class="grid grid-cols-12 pb-6">
+            <div class="grid grid-cols-12 mb-24">
                 <div class="col-start-3 col-end-11 col-span-8 flex items-center container mx-auto py-11">
                     <h1 class="font-bold text-2xl flex-grow text-center text-emerald-500">
                         <?php echo h(ucfirst($user['first_name']) . " " . ucfirst($user['last_name'])); ?>
                     </h1>
                 </div>
                 <!-- Profile Details Start -->
-                <div class="col-start-3 col-end-11 col-span-8">
+                <div class="col-start-3 col-end-11 col-span-8 grid justify-items-center">
 
-                    <form action="<?php echo get_public_url('/users/create.php'); ?>" method="POST" class="shadow border rounded-3xl w-full py-28 text-gray-700 grid justify-items-center content-center">
+                    <form action="<?php echo get_public_url('/users/create.php'); ?>" method="POST" class="shadow border rounded-3xl w-full max-w-2xl py-28 text-gray-700 grid justify-items-center content-center">
 
                         <div class="mb-12 w-1/2">
-                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_name" type="text" name="username" placeholder="Username goes here!" value="<?php echo h($user['username']); ?>">
+                            <input class="border-b-4 border-purple-200 w-full text-emerald-500" id="user_name" type="text" name="username" placeholder="Username goes here!" value="<?php echo h($user['username']); ?>" style="background: url('icons/edit_icon.png') no-repeat right; cursor: pointer">
                         </div>
 
                         <div class="mb-12 w-1/2">
-                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_dob" type="text" name="dob" placeholder="YYYY,MM,DD" value="<?php echo h($user['dob']); ?>">
+                            <input class="border-b-4 border-purple-200 w-full text-emerald-500" id="user_dob" type="text" name="dob" placeholder="YYYY,MM,DD" value="<?php echo h($user['dob']); ?>">
                         </div>
 
                         <div class="mb-12 w-1/2">
-                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_email" type="email" name="email" placeholder="User's email goes here!" value="<?php echo h($user['email']); ?>">
+                            <input class="border-b-4 border-purple-200 w-full text-emerald-500" id="user_email" type="email" name="email" placeholder="User's email goes here!" value="<?php echo h($user['email']); ?>" style="background: url('icons/edit_icon.png') no-repeat right; cursor: pointer">
                         </div>
 
                         <div class="mb-12 w-1/2">
-                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_password" type="password" name="password" placeholder="Password" value="******">
+                            <input class="border-b-4 border-purple-200 w-full text-emerald-500" id="user_password" type="password" name="password" placeholder="Password" value="******" style="background: url('icons/edit_icon.png') no-repeat right; cursor: pointer">
                         </div>
 
                         <div class="mb-12 w-1/2">
-                            <select class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" name="country" id="user_country">
+                            <select class="border-b-4 border-purple-200 w-full text-emerald-500" name="country" id="user_country" style="background: url('icons/edit_icon.png') no-repeat right; appearance: none; cursor: pointer">
                                 <option value="">Please choose one</option>
                                 <option <?php echo h($user['country'] == 'Mongolia') ? 'selected' : ''; ?> value="Mongolia">Mongolia</option>
                                 <option <?php echo h($user['country'] == 'India') ? 'selected' : ''; ?> value="India">India</option>
@@ -78,11 +78,11 @@
                         </div>
 
                         <div class="mb-12 w-1/2">
-                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_phone" type="tel" name="phone" placeholder="Phone number goes here!" value="<?php echo h($user['phone']); ?>">
+                            <input class="border-b-4 border-purple-200 w-full text-emerald-500" id="user_phone" type="tel" name="phone" placeholder="Phone number goes here!" value="<?php echo h($user['phone']); ?>" style="background: url('icons/edit_icon.png') no-repeat right; cursor: pointer">
                         </div>
 
                         <div class="mb-12 w-1/2">
-                            <input class="border-b-4 border-purple-200 w-full py-2 px-3 text-emerald-500" id="user_interests" type="text" name="interests" placeholder="User's interests goes here!" value="<?php echo h($user['interests']); ?>">
+                            <input class="border-b-4 border-purple-200 w-full text-emerald-500" id="user_interests" type="text" name="interests" placeholder="User's interests goes here!" value="<?php echo h($user['interests']); ?>" style="background: url('icons/edit_icon.png') no-repeat right; cursor: pointer">
                         </div>
 
                         <div class="mb-4">

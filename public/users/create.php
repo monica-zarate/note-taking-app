@@ -57,72 +57,78 @@ if (is_post_request()) {
 
       <!-- Create: Form -->
       <div class="grid grid-cols-12 mt-10">
-        <div class="col-start-3 col-end-11 col-span-8">
+        <div class="col-start-3 col-end-11 col-span-8 grid justify-items-center">
 
-          <form action="<?php echo get_public_url('/users/create.php'); ?>" method="POST" class="shadow border rounded w-full py-2 px-3 text-gray-700">
+          <form action="<?php echo get_public_url('/users/create.php'); ?>" method="POST" class="shadow border rounded-3xl w-full max-w-2xl pt-20 pb-11 px-24 mb-44 text-gray-700">
 
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_firstname">First Name</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_firstname" type="text" name="first_name">
+            <div class="flex justify-between mb-9">
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_firstname">First Name<span class="text-red-500">*</span></label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_firstname" type="text" name="first_name">
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_lastname">Last Name<span class="text-red-500">*</span></label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_lastname" type="text" name="last_name">
+              </div>
             </div>
 
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_lastname">Last Name</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_lastname" type="text" name="last_name">
+            <div class="flex justify-between mb-9">
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_name">User Name</label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_name" type="text" name="username">
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_dob">Date of Birth<span class="text-red-500">*</span></label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob" placeholder="YYYY,MM,DD">
+              </div>
             </div>
 
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_name">User Name</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_name" type="text" name="username">
+            <div class="mb-9">
+              <label class="block text-sm font-bold mb-2" for="user_email">Email<span class="text-red-500">*</span></label>
+              <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_email" type="email" name="email">
             </div>
 
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_dob">Date of Birth</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_dob" type="text" name="dob" placeholder="YYYY,MM,DD">
+            <div class="flex justify-between mb-9">
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_password">Password<span class="text-red-500">*</span></label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_password" type="password" name="password">
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_password2">Re-type Password<span class="text-red-500">*</span></label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_password2" type="password" name="password2">
+              </div>
             </div>
 
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_email">Email</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_email" type="email" name="email">
+            <div class="flex justify-between mb-9">
+              <div class="w-52">
+                <label class="block text-sm font-bold mb-2" for="user_country">Country<span class="text-red-500">*</span></label>
+                <select class="border rounded w-full py-2 px-3 text-gray-700" name="country" id="user_country">
+                  <option value=""></option>
+                  <option value="Mongolia">Mongolia</option>
+                  <option value="India">India</option>
+                  <option value="Canada">Canada</option>
+                  <option value="USA">USA</option>
+                  <option value="Mexico">Mexico</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2" for="user_phone">Phone<span class="text-red-500">*</span></label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_phone" type="tel" name="phone">
+              </div>
             </div>
 
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_password">Password</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_password" type="password" name="password">
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_password2">Re-type Password</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_password2" type="password" name="password2">
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_country">Country</label>
-              <select class="shadow border rounded w-full py-2 px-3 text-gray-700" name="country" id="user_country">
-                <option value="">Please choose one</option>
-                <option value="Mongolia">Mongolia</option>
-                <option value="India">India</option>
-                <option value="Canada">Canada</option>
-                <option value="USA">USA</option>
-                <option value="Mexico">Mexico</option>
-              </select>
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-sm font-bold mb-2" for="user_phone">Phone</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_phone" type="tel" name="phone">
-            </div>
-
-            <div class="mb-4">
+            <div class="mb-9">
               <label class="block text-sm font-bold mb-2" for="user_interests">Interests</label>
-              <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_interests" type="text" name="interests">
+              <input class="border rounded w-full py-2 px-3 text-gray-700" id="user_interests" type="text" name="interests">
             </div>
 
-            <button class="bg-emerald-500 rounded-2xl py-3 px-5 text-white font-bold" type="submit">Sign Up</button>
+            <div class="flex flex-col items-center">
+              <button class="bg-emerald-500 rounded-2xl py-3 px-5 mt-14 text-white font-bold" type="submit">Sign Up</button>
 
-            <div class="mb-4">
-              <span>Already have an Account?</span>
-              <a class="inline-block py-2 no-underline font-bold text-emerald-500 mr-5" href="<?php echo get_public_url('/users/login.php'); ?>">Log In</a>
+              <div class="mt-8">
+                <span class="text-neutral-400">Already have an Account?</span>
+                <a class="inline-block py-2 no-underline font-bold text-emerald-500 mr-5" href="<?php echo get_public_url('/users/login.php'); ?>">Log In</a>
+              </div>
             </div>
 
           </form>

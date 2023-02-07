@@ -69,9 +69,9 @@ if (is_post_request()) {
 
       <!-- Login: Form -->
       <div class="grid grid-cols-12 mt-10">
-        <div class="col-start-3 col-end-11 col-span-8">
+        <div class="col-start-3 col-end-11 col-span-8 grid justify-items-center">
 
-          <form action="<?php echo get_public_url('/users/login.php'); ?>" method="POST" class="shadow border rounded-3xl w-full pt-28 pb-14 px-3 text-gray-700 grid justify-items-center content-center">
+          <form action="<?php echo get_public_url('/users/login.php'); ?>" method="POST" class="shadow border rounded-3xl w-full max-w-2xl pt-28 pb-14 px-3 text-gray-700 grid justify-items-center content-center">
 
             <div class="mb-4 w-3/4">
               <label class="block text-sm font-bold mb-2" for="email">Email</label>
